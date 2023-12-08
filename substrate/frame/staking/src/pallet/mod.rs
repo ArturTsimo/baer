@@ -1314,9 +1314,7 @@ pub mod pallet {
 				Error::<T>::ControllerDeprecated
 			);
 
-			let _ = ledger
-				.set_payee(payee)
-				.defensive_proof("ledger was retrieved from storage, thus its bonded; qed.")?;
+			ledger.set_payee(payee)?;
 
 			Ok(())
 		}
